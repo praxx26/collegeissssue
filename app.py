@@ -20,7 +20,11 @@ st.set_page_config(
 @st.cache_resource
 def load_direct_pipeline():
     """Cached loader for standalone/direct inference mode on free hosting."""
-    from inference import CampusAI
+    try:
+        from campus_ai.inference import CampusAI
+    except ImportError:
+        from inference import CampusAI
+
     model_path = os.path.join(os.path.dirname(__file__), "campus_ai", "models", "best.pt")
     return CampusAI(yolo_model_path=model_path)
 
