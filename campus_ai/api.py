@@ -10,11 +10,23 @@ import os
 sys.path.append(os.path.dirname(__file__))
 from inference import CampusAI
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(
     title="Campus AI API",
     description="Production API for Campus Issue Detection (YOLO + CLIP Fallback + BLIP Captioning)",
     version="1.0.0"
 )
+
+# Enable CORS for cross-origin frontend requests (React, Angular, Mobile, Web)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Load the AI pipeline globally when the server starts
 print("Loading Campus AI Pipeline. This may take a moment...")
