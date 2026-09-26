@@ -1,0 +1,22 @@
+# Environments
+.venv/
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Datasets and heavy training runs (keep inference code and model weights clean)
+dataset/
+combined_dataset_7classes/
+to_add_datasforlessdata/
+runs/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store

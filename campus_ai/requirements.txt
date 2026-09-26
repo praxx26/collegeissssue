@@ -1,0 +1,8 @@
+torch
+transformers
+ultralytics
+Pillow
+fastapi
+uvicorn
+python-multipart
+requests

@@ -1,0 +1,11 @@
+torch
+transformers
+ultralytics
+streamlit
+pillow
+pandas
+fastapi
+uvicorn
+python-multipart
+requests
+
