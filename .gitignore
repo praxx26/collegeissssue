@@ -10,7 +10,12 @@ __pycache__/
 *.pyd
 .pytest_cache/
 
-# Datasets and heavy training runs (keep inference code and model weights clean)
+# Large model weights (keep campus_ai/models/best.pt for inference)
+*.pt
+!campus_ai/models/best.pt
+weights/
+
+# Datasets and heavy training runs (keep inference code clean)
 dataset/
 combined_dataset_7classes/
 to_add_datasforlessdata/
@@ -20,3 +25,4 @@ runs/
 .vscode/
 .idea/
 .DS_Store
+
