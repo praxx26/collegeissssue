@@ -4,8 +4,12 @@ import base64
 import torch
 from PIL import Image
 from ultralytics import YOLO
-from caption_generator import CaptionGenerator
-from hf_fallback import FallbackClassifier
+try:
+    from .caption_generator import CaptionGenerator
+    from .hf_fallback import FallbackClassifier
+except ImportError:
+    from caption_generator import CaptionGenerator
+    from hf_fallback import FallbackClassifier
 
 class CampusAI:
     def __init__(self, yolo_model_path="models/best.pt", conf_threshold=0.5, fallback_threshold=0.40, crowd_threshold=5):
